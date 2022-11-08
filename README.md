@@ -1,5 +1,4 @@
-# Fuz-Ro-D-oh-64
-Fuz Ro D'oh for Skyrim Special Edition GOG
+# Fuz Ro D'oh for Skyrim Special Edition GOG
 
 A fork of https://github.com/shadeMe/Fuz-Ro-D-oh-64 with a few patches to make it work with GOG Skyrim.
 
