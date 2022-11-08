@@ -1,6 +1,6 @@
 #pragma once
 #include "skse64/PluginAPI.h"
-#include "skse64/skse64_common/skse_version.h"
+#include "skse64_common/skse_version.h"
 #include "skse64/GameAPI.h"
 #include "skse64/GameTypes.h"
 #include "skse64/GameForms.h"
@@ -73,7 +73,13 @@ public:
 	MEMBER_FN_PREFIX(BSIStream);
 
 	// E8 ? ? ? ? 90 33 DB 38 5C 24 38
-	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140D93090), const char* FilePath, void* ParentLocation);
+	// noxsiderem 8 Nov 2022: 
+	//   => in 1.6.353 this was hex offset D814B0  (gives ID = 76354)
+	//   => in 1.6.640 this was hex offset D93090  (also gives ID = 76354)
+	// we infer that the ID in the 1.6.xx SKSE address library is thus 76354
+	// which implies
+	//   => in 1.6.653 this is hex offset  D927F0  (given ID = 52637)
+	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140D927F0), const char* FilePath, void* ParentLocation);
 
 	// members
 	///*00*/ void**					vtbl;

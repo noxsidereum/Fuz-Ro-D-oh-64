@@ -31,7 +31,7 @@ extern "C"
 
 	__declspec(dllexport) bool SKSEPlugin_Load(const SKSEInterface * skse)
 	{
-		gLog.OpenRelative(CSIDL_MYDOCUMENTS, "\\My Games\\Skyrim Special Edition\\SKSE\\Fuz Ro D-oh.log");
+		gLog.OpenRelative(CSIDL_MYDOCUMENTS, "\\My Games\\Skyrim Special Edition GOG\\SKSE\\Fuz Ro D-oh.log");
 
 		_MESSAGE("%s Initializing...", MakeSillyName().c_str());
 
@@ -73,7 +73,7 @@ extern "C"
 		"",
 		0,	// Version-dependent
 		0,
-		{ RUNTIME_VERSION_1_6_640, 0 },
+		{ RUNTIME_VERSION_1_6_659_GOG, 0 },
 		0,
 	};
 };

@@ -6,18 +6,36 @@
 namespace hookedAddresses
 {
 	// E8 ? ? ? ? 48 8B F8 EB 02 33 FF 48 85 FF
-	RelocAddr<uintptr_t>	kCachedResponseData_Ctor(MAKE_RVA(0x0000000140591080));
+	// noxsiderem 8 Nov 2022: 
+	//   => in 1.6.353 this was hex offset 5899C0  (gives ID = 35249)
+	//   => in 1.6.640 this was hex offset 591080  (also gives ID = 35249)
+	// we infer that the ID in the 1.6.xx SKSE address library is thus 35249
+	// which implies
+	//   => in 1.6.653 this is hex offset  590C40  (given ID = 35249)
+	RelocAddr<uintptr_t>	kCachedResponseData_Ctor(MAKE_RVA(0x0000000140590C40));
 	uintptr_t				kCachedResponseData_Ctor_Hook = kCachedResponseData_Ctor + 0xEC;
 	uintptr_t				kCachedResponseData_Ctor_Ret = kCachedResponseData_Ctor + 0xF1;
 
 	// E8 ? ? ? ? 8B 06 EB 09
-	RelocAddr<uintptr_t>	kUIUtils_QueueDialogSubtitles(MAKE_RVA(0x00000001409184B0));
+	// noxsiderem 8 Nov 2022: 
+	//   => in 1.6.353 this was hex offset 906D60  (gives ID = 52854)
+	//   => in 1.6.640 this was hex offset 9184B0  (also gives ID = 52854)
+	// we infer that the ID in the 1.6.xx SKSE address library is thus 52854
+	// which implies
+	//   => in 1.6.653 this is hex offset  917C20  (given ID = 52854)
+	RelocAddr<uintptr_t>	kUIUtils_QueueDialogSubtitles(MAKE_RVA(0x0000000140917C20));
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Hook = kUIUtils_QueueDialogSubtitles + 0x4D;
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Show = kUIUtils_QueueDialogSubtitles + 0x5A;
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Exit = kUIUtils_QueueDialogSubtitles + 0x103;
 
 	// E8 ? ? ? ? 84 C0 75 42 48 8B 35 ? ? ? ?
-	RelocAddr<uintptr_t>	kASCM_DisplayQueuedNPCChatterData(MAKE_RVA(0x000000014090E800));
+	// noxsiderem 8 Nov 2022: 
+	//   => in 1.6.353 this was hex offset 8FD0B0  (gives ID = 52637)
+	//   => in 1.6.640 this was hex offset 90E800  (also gives ID = 52637)
+	// we infer that the ID in the 1.6.xx SKSE address library is thus 52637
+	// which implies
+	//   => in 1.6.653 this is hex offset  90DF70  (given ID = 52637)
+	RelocAddr<uintptr_t>	kASCM_DisplayQueuedNPCChatterData(MAKE_RVA(0x000000014090DF70));
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Hook = kASCM_DisplayQueuedNPCChatterData + 0x1CA;
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Show = kASCM_DisplayQueuedNPCChatterData + 0x1D3;
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Exit = kASCM_DisplayQueuedNPCChatterData + 0x1FD;
@@ -27,7 +45,13 @@ namespace hookedAddresses
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_GeneralSubs_Exit = kASCM_DisplayQueuedNPCChatterData + 0x1CA;
 
 	// E8 ? ? ? ? F3 0F 10 35 ? ? ? ? 48 8D 4E 28
-	RelocAddr<uintptr_t>	kASCM_QueueNPCChatterData(MAKE_RVA(0x000000014090E150));
+	// noxsiderem 8 Nov 2022: 
+	//   => in 1.6.353 this was hex offset 8FCA00  (gives ID = 52626)
+	//   => in 1.6.640 this was hex offset 90E150  (also gives ID = 52626)
+	// we infer that the ID in the 1.6.xx SKSE address library is thus 52626
+	// which implies
+	//   => in 1.6.653 this is hex offset  90D8C0  (given ID = 52626)
+	RelocAddr<uintptr_t>	kASCM_QueueNPCChatterData(MAKE_RVA(0x000000014090D8C0));
 	uintptr_t				kASCM_QueueNPCChatterData_Hook = kASCM_QueueNPCChatterData + 0x85;
 	uintptr_t				kASCM_QueueNPCChatterData_Show = kASCM_QueueNPCChatterData + 0x92;
 	uintptr_t				kASCM_QueueNPCChatterData_Exit = kASCM_QueueNPCChatterData + 0xCA;
